@@ -1,3 +1,10 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Elementos
     const timerDisplay = document.getElementById('timer');
@@ -94,4 +101,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Iniciar o tempo com o valor padrão
     resetTimer(Number(workInput.value) * 60);
+
 });
