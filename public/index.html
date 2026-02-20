@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Pomoclock</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" type="module" defer></script>
+</head>
+<body>
+    <div class="container" role="main" aria-label="Pomoclock Watch">
+        <h1>Pomoclock</h1>
+
+        <!-- Display do timer  -->
+        <div id="timer" class="timer" aria-live="polite">25:00</div>
+
+        <!-- Controles principais  -->
+        <div id="controls" class="controls" role="group" aria-label="Controles do cronômetro">
+            <button id="start" aria-label="Iniciar">Iniciar</button>
+            <button id="pause" aria-label="Pausar" disabled>Pausar</button>
+            <button id="reset" aria-label="Resetar">Resetar</button>
+        </div>
+
+        <!-- Botões rápidos  -->
+        <div class="quick-buttons" role="group" aria-label="Atalhos rápidos">
+            <button id="focus" aria-label="Iniciar foco">Foco (25 min)</button>
+            <button id="short" aria-label="Descanso curto">Descanso Curto (5 min)</button>
+            <button id="long" aria-label="Descanso longo">Descanso Longo (15 min)</button>
+        </div>
+
+        <!-- Ajustes de duração  -->
+        <div id="settings" class="settings" aria-label="Configurações de duração">
+            <label for="work-duration">Duração do trabalho (min):</label>
+            <input type="number" id="work-duration" value="25" min="1" max="60" />
+
+            <label for="break-duration">Duração do intervalo (min):</label>
+            <input type="number" id="break-duration" value="5" min="1" max="30" />
+
+            <label for="long-break-duration">Duração do intervalo longo (min):</label>
+            <input type="number" id="long-break-duration" value="15" min="1" max="60" />
+        </div>
+
+        <!-- Lista de compromissos  -->
+        <div class="tasks">
+            <h2>Compromissos</h2>
+            <ul id="task-list" aria-label="Lista de compromissos"></ul>
+
+            <div class="task-input-row">
+                <input type="text" id="task-input" placeholder="Novo compromisso" aria-label="Novo compromisso" />
+            </div>
+            
+            <div class="task-buttons-row">
+                <button id="add-task" class="task-btn-left" aria-label="Adicionar compromisso">
+                    ➕ Adicionar Compromisso
+                </button>
+                <button id="upload-sound" class="task-btn" aria-label="Adicionar arquivos de áudio">
+                    📁 Adicionar Áudio
+                </button>
+                <button id="toggle-sound" class="task-btn-right" aria-label="Ativar/Desativar sons">
+                    🔔 Sons: Ligado
+                </button>
+            </div>
+
+            <audio id="notification-sound" preload="auto"></audio>
+            <audio id="tick-sound" preload="auto"></audio>
+            <audio id="end-sound" preload="auto"></audio>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "pomodoro-clock",
+  "version": "1.0.0",
+  "description": "Timer Pomodoro com gerenciamento de tarefas",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "serve": "npx http-server public -p 3000 -o"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "http-server": "^14.1.1"
+  }
+}
